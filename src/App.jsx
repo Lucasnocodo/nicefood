@@ -27,8 +27,12 @@ function App() {
     setIsLoading(true)
     let searchPage = page
     if (type === 'more') {
-      searchPage += 1
-      setPage(pre => pre + 1)
+      /** infinity mode */
+      searchPage = 1
+
+      /** normal mode */
+      // searchPage += 1
+      // setPage(pre => pre + 1)
     }
     getUserApi(searchPage, sliderValue, keyword)
       .then(function (response) {

@@ -32,7 +32,7 @@ const BaseSlider = styled(Slider)(({ ismobile }) => (
         },
         '& .MuiSlider-markLabel': {
             fontSize: `${ismobile === 'true' ? '14px' : '16px'}`,
-            top: `${ismobile === 'true' ? '30px' : '35px'}`,
+            top: `${ismobile === 'true' ? '39px' : '35px'}`,
 
         },
 

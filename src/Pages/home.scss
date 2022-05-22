@@ -1,6 +1,8 @@
 .home-container {
     margin: 0 auto;
-    width: 725px;
+    max-width: 725px;
+    padding: 0 10px;
+    box-sizing: border-box;
 
     .header {
         position: fixed;
@@ -28,6 +30,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        margin: 0;
     }
     section {
         border-bottom: 1px rgba(255, 225, 225, .1) solid;
@@ -99,11 +102,7 @@ p {
     .home-container {
         width: 100%;
         padding: 0 20px;       
-        box-sizing: border-box;
-        .result-content{
-            display: block;
-            margin-top: 0;
-        }
+     
         .header {
             width: 100%;
             padding-left: 5px;
@@ -115,32 +114,32 @@ p {
         .search-header {
             margin-top: 0;
             border-bottom: none;
+            padding-bottom: 0;
             .title {
                 margin-bottom: 16px;
             }
         }
-        .title {
-            letter-spacing: -0.6px;
-            margin-bottom: 10px;
-
-        }
+       
         .search-slider {
+            margin-top: 29px;
             padding-bottom: 215px;
+            .title {
+                letter-spacing: -0.6px;
+                margin-bottom: 10px;
+    
+            }
         }
         .search-box {
             bottom: 93px;
             width: inherit;
         }
 
-        .result-item {
-            width: 100%;
-            height: unset;
-        }
+        
         .results-text {
             margin: 0;
         }
         .result-numer {
-            margin-right: 5px;
+            margin-right: 10px;
         }
     }
 

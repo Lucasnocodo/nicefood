@@ -26,9 +26,6 @@ function SideBar() {
     }
 
     const checkSelected = (url) => {
-        console.log('url', url)
-        console.log('pathname', pathname)
-        console.log('url.indexOf(pathname)', url.indexOf(pathname))
         if (url.indexOf(pathname) >= 0) {
             document.cookie = `${pathname}=visited`
             return 'selected'
