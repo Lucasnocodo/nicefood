@@ -21,9 +21,10 @@
 }
 .nav-item {
     text-align: center;
-    margin: 16px 22px 0 24px;
+    margin: 21px 22px 0 24px;
     cursor: pointer;
     color: #181818;
+    position: relative;
     &:hover {
         color: white;
         .svg-icon {
@@ -49,8 +50,9 @@
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        position: relative;
-        right: -28px;
+        position: absolute;
+        top: -5px;
+        right: -1px;
     }
 }
 
@@ -70,6 +72,9 @@
         backdrop-filter: blur(54.3656px);
         .logo, span {
             display: none;
+        }
+        .new-page {
+            right: -5px;
         }
     }
 

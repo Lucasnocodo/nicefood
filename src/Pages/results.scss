@@ -53,7 +53,7 @@
     top: 0;
     background-color: #181818;
     z-index: 1;
-    align-items: end;
+    align-items: flex-end;
     display: flex;
     padding-bottom: 25px;
     padding-left: 8px;
@@ -74,10 +74,11 @@
 @media screen and (max-width:440px) {
     .result-container, .tags-container {
         width: 100%;
-        padding: 0 20px;       
+        padding: 0 20px 20px;       
         .result-item {
             width: 100%;
             height: unset;
+            position: relative;
         }
         .back-icon {
             position: relative;
@@ -111,6 +112,9 @@
         }
         .item-username {
             margin-bottom: 38px;
+        }
+        .more-box {
+            margin: 0;
         }
     }
      

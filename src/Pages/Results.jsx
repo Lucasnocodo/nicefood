@@ -6,10 +6,12 @@ import Skeleton from '@mui/material/Skeleton'
 import { useNavigate } from "react-router-dom";
 
 import './results.scss'
+
 function Results({ results, handleSearch, isMobile,
     setPage, setResults, isLoading, sliderValue, setKeyword }) {
     const [imgOnLaod, setImgOnLaod] = useState(false)
     let navigate = useNavigate();
+
     const handleBack = () => {
         navigate('/')
         setPage(1)
@@ -27,9 +29,10 @@ function Results({ results, handleSearch, isMobile,
         <>
             {results.map(({ id, avater, username, name }, index) => (
                 <div key={id} className='result-item'>
-
-                    <Skeleton sx={{ bgcolor: 'primary.dark', display: `${imgOnLaod ? 'none' : 'block'}`, position: 'absolute' }} variant="rectangular" className={isMobile ? 'mibile-item-pic' : 'item-pic'} />
-
+                    <Skeleton
+                        sx={{ bgcolor: 'primary.dark', display: `${imgOnLaod ? 'none' : 'block'}`, position: 'absolute' }}
+                        variant="rectangular"
+                        className={isMobile ? 'mibile-item-pic' : 'item-pic'} />
                     <img src={avater}
                         alt=''
                         className={isMobile ? 'mibile-item-pic' : 'item-pic'}
@@ -59,14 +62,13 @@ function Results({ results, handleSearch, isMobile,
         } else if (results.length > 0) {
             return (<>
                 {PicResults}
-
             </>
             )
         } else {
             return <p className='no-results'>No Results</p>
         }
     }
-    console.log('imgOnLaod', imgOnLaod)
+
     return (
         <div className='result-container'>
             <div className='sub-header'>
@@ -77,12 +79,11 @@ function Results({ results, handleSearch, isMobile,
                 {renderContent()}
             </div>
             {results.length > 0 && !isLoading &&
-                <div className='more-box'>
+                < div className='more-box'>
                     <ButtonX width={343} onClick={() => handleSearch('more')}>More</ButtonX>
                 </div>
             }
-
-        </div>
+        </div >
     )
 }
 

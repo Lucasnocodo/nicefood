@@ -13,16 +13,7 @@ export default function Tags({ isMobile }) {
     let navigate = useNavigate();
     const [tagResults, setTagResults] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const [needFetch, setNeedFetch] = useState(false)
-
-    useEffect(() => {
-        setIsLoading(true)
-        getUserApi(FETCHPAGE, FETCHSIZE)
-            .then(function (response) {
-                setTagResults(pre => response.data)
-                setIsLoading(false)
-            });
-    }, [])
+    const [needFetch, setNeedFetch] = useState(true)
 
     useEffect(() => {
         if (needFetch) {
@@ -41,26 +32,13 @@ export default function Tags({ isMobile }) {
         navigate('/')
     }
 
-    let lastKnownScrollPosition = 0;
-    let ticking = false;
-
-    function fetchData(scrollPos) {
+    // infinitely query data
+    document.addEventListener('scroll', function () {
+        let scrollPosition = window.scrollY;
         let box = document.querySelector('.result-content');
         let height = box.offsetHeight;
-        if (height - scrollPos < FETCHPOINT) {
+        if (height - scrollPosition < FETCHPOINT) {
             setNeedFetch(true)
-        }
-    }
-
-    document.addEventListener('scroll', function (e) {
-        lastKnownScrollPosition = window.scrollY;
-
-        if (!ticking) {
-            window.requestAnimationFrame(function () {
-                fetchData(lastKnownScrollPosition);
-                ticking = false;
-            });
-            ticking = true;
         }
     });
 

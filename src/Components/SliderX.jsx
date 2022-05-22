@@ -88,7 +88,7 @@ export default function SliderX({ sliderValue, setSliderValue, isMobile }) {
                 step={null}
                 marks={marks}
                 defaultValue={sliderValue}
-                max={19.5}
+                max={19.1}
                 ismobile={`${isMobile}`}
                 onChangeCommitted={handleValueChange}
                 min={2.8} />

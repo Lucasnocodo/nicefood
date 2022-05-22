@@ -7,8 +7,8 @@ import SideBar from './Containers/SideBar.jsx';
 import Followers from './Containers/Followers.jsx';
 import getUserApi from './apis/getUser.js';
 
-
 import './App.css';
+
 const { innerWidth } = window;
 const isMobile = innerWidth <= 440
 function App() {
@@ -20,26 +20,33 @@ function App() {
   const [FollowerResults, setFollowerResults] = useState([])
   const [PicResults, setPicResults] = useState([])
   const [page, setPage] = useState(1)
+  const [totalpages, setTotalPages] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSearch = useCallback((type) => {
-    navigate('/result')
     setIsLoading(true)
     let searchPage = page
     if (type === 'more') {
-      /** infinity mode */
-      searchPage = 1
+      searchPage += 1
+      if (searchPage > totalpages) {
+        /** infinity mode */
+        searchPage = 1
+        setPage(1)
+      } else {
+        setPage(pre => pre + 1)
+      }
 
-      /** normal mode */
-      // searchPage += 1
-      // setPage(pre => pre + 1)
+    } else {
+      navigate('/result')
     }
     getUserApi(searchPage, sliderValue, keyword)
       .then(function (response) {
-        setPicResults(pre => [...pre, ...response.data])
+        const { data, totalPages } = response
+        setPicResults(pre => [...pre, ...data])
+        setTotalPages(totalPages)
         setIsLoading(false)
       });
-  }, [keyword, navigate, page, sliderValue])
+  }, [keyword, navigate, page, sliderValue, totalpages])
 
   const renderSideBar = () => {
     if (isMobile) {
