@@ -1,0 +1,77 @@
+.side-bar-container {
+    width: 80px;
+    height: 100%;
+    min-height: 100vh;
+    background: #1b1b1b;
+    padding-top: 34px;
+    box-sizing: border-box;
+    position: fixed;
+   
+}
+.logo {
+    background: linear-gradient(270deg, #FFD25F 0.13%, #FF5C01 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 13px;
+    text-align: center;
+    margin: 0 0 44px 0;
+    font-weight: 700;
+    font-family: 'Ubuntu';
+}
+.nav-item {
+    text-align: center;
+    margin: 16px 22px 0 24px;
+    cursor: pointer;
+    color: #181818;
+    &:hover {
+        color: white;
+        .svg-icon {
+            fill: white;
+        }
+    }
+    .svg-icon {
+        fill: #8A8A8F;
+    }
+    span{
+        margin-left: -5px;
+        font-size: 12px;
+    }
+    .selected {
+        color: white;
+        fill: white;
+        position: relative;
+        top: -4px;
+        left: 2px;
+    }
+    .new-page {
+        background: #00D1FF;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        position: relative;
+        right: -28px;
+    }
+}
+
+
+@media screen and (max-width:440px) {
+    .side-bar-container {
+        width: 100%;
+        padding: 0;
+        height: 66px;
+        position: fixed;
+        bottom: 0;
+        min-height: unset;
+        display: flex;
+        justify-content: center;
+        background: rgba(24, 24, 24, 0.2);
+        box-shadow: inset 0px 0.5px 0px rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(54.3656px);
+        .logo, span {
+            display: none;
+        }
+    }
+
+   
+}

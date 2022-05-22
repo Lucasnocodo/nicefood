@@ -1,0 +1,71 @@
+.result-container {
+    margin: 0 auto;
+    width: 725px;
+
+    .back-icon {
+        cursor: pointer;
+        position: absolute;
+        left: -44px;
+        top: 101px;
+    }
+
+    .results-text {
+        margin-bottom: 5px;
+    }
+    
+    .result-item {
+        width: 219px;
+    }
+    .item-username {
+        margin-bottom: 30px;
+    }
+    .more-box {
+        margin-bottom: 50px;
+    }
+
+    .item-pic {
+        width: 219px;
+        height: 146px;
+    }
+
+    .mibile-item-pic {
+        width: 100%;
+        height: 59.38vw;
+    }
+        
+    .no-results {
+        margin-top: 120px;
+        font-size: 46px;
+        border: 1px solid;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .item-title {
+        font-size: 14.9px;
+        margin-top: 10px;
+    }
+}
+
+.sub-header {
+    height: 161px;
+    position: sticky;
+    top: 0;
+    background-color: #181818;
+    z-index: 1;
+    align-items: end;
+    display: flex;
+    padding-bottom: 25px;
+    padding-left: 8px;
+    box-sizing: border-box;
+    .title {
+        margin: 0;
+        font-size: 30px;
+    }
+}
+
+.result-content{
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
